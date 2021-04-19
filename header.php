@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
  <!DOCTYPE html>
 <html>
     <meta charset = "utf-8">
@@ -15,8 +19,16 @@
                 <li><a href="index.php">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Find Cars</a></li>
-                <li><a href="login.php">Login</a></li>
-                <li><a href="signup.php">Signup</a></li>
+                <?php
+                 if (isset($_SESSION["usersuid"])) {
+                     echo "<li><a href='profile.php'>Profile</a></li>";
+                     echo "<li><a href='includes/logout.inc.php'>Logout</a></li>";
+                 }
+                 else {
+                    echo "<li><a href='login.php'>Login</a></li>";
+                    echo "<li><a href='signup.php'>Signup</a></li>";
+                 }   
+                ?>
             </ul>
         </header>
     </body>

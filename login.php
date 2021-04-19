@@ -10,6 +10,16 @@ include_once 'header.php';
 <button type="submit" name="submit">Login</button>
 </form>
 </div>
+<?php
+if (isset($_GET["error"])){
+      if($_GET["error"] == "emptyinput"){
+          echo "<p>Fill in the fields!</p>";
+      }
+      else if($_GET["error"] == "wronglogin"){
+        echo "<p>Incorrect login information!</p>";  
+      }
+    }
+?>
 </section>
 
 
