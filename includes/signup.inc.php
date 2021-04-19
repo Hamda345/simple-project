@@ -1,10 +1,10 @@
 <?php
 if (isset($_POST["submit"])){
-    $name = $_PSOT["name"];
+    $name = $_POST["name"];
     $email = $_POST["email"];
     $username = $_POST["Uid"];
     $pwd = $_POST["Pwd"];
-    $pwdRepeat = $_POSt["Pwdrepeat"];
+    $pwdRepeat = $_POST["Pwdrepeat"];
 
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';
