@@ -16,24 +16,24 @@ include_once 'header.php';
 <?php
 if (isset($_GET["error"])){
       if($_GET["error"] == "emptyinput"){
-          echo "<p>Fill in the fields!</p>";
+          echo "<h3 style='color:red' align='center'>Fill in the fields!</p>";
       }
       else if($_GET["error"] == "invaliduid"){
-        echo "<p>Choose a proper username</p>";  
+        echo "<h3 style='color:red' align='center'>Choose a proper username</p>";  
       }
       else if($_GET["error"] == "invalidemail"){
-        echo "<p>Type a valid E-mail</p>";  
+        echo "<h3 style='color:red' align='center'>Type a valid E-mail</p>";  
       } else if($_GET["error"] == "passworddontmatch"){
-        echo "<p>Passwords don't match!</p>";  
+        echo "<h3 style='color:red' align='center'>Passwords don't match!</p>";  
       }
       else if($_GET["error"] == "usernametaken"){
-        echo "<p>Username already taken!</p>";  
+        echo "<h3 style='color:red' align='center'>Username already taken!</p>";  
       }
       else if($_GET["error"] == "stmtfailed"){
-        echo "<p>Something went wrong, try again!</p>";  
+        echo "<h3 style='color:red' align='center'>Something went wrong, try again!</p>";  
       }
       else if($_GET["error"] == "none"){
-        echo "<p>You have signed up!</p>";  
+        echo "<h3 style='color:green' align='center'>You have signed up!</p>";  
       }
     }
 ?>

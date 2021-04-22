@@ -13,10 +13,10 @@ include_once 'header.php';
 <?php
 if (isset($_GET["error"])){
       if($_GET["error"] == "emptyinput"){
-          echo "<p>Fill in the fields!</p>";
+          echo "<h3 style='color:red' align='center'>Fill in the fields!</p>";
       }
       else if($_GET["error"] == "wronglogin"){
-        echo "<p>Incorrect login information!</p>";  
+        echo "<h3 style='color:red' align='center'>Incorrect login information!</p>";  
       }
     }
 ?>
