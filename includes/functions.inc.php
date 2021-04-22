@@ -22,10 +22,10 @@ function invalidUid($username) {
    function invalidEmail($email) {
     $results;
     if(filter_var($email, FILTER_VALIDATE_EMAIL)){
-       $results = true;
+       $results = false;
     }
     else {
-        $results = false;
+        $results = true;
     }
     return $results;
    }
@@ -107,3 +107,26 @@ function  loginUser($conn, $username, $pwd){
         exit();
     }
    }
+   function emptyInputCar($carBrand, $carPrice, $carDoors, $carSeats, $carFueltype) {
+    $results;
+    if( empty($carBrand) || empty($carPrice) || empty($carDoors) || empty($carSeats) || empty($carFueltype)){
+       $results= true;
+    }
+    else {
+        $results = false;
+    }
+    return $results;
+   }
+   function createCar($conn, $carBrand, $carPrice, $carDoors, $carSeats, $carFueltype) {
+    $sql = "INSERT INTO cars (carsBrand, carsPrice, carsDoors, carsSeats, carsFueltype) VALUES (?, ?, ?, ?, ?);";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)){
+        header("location: ../NewCar.php?error=stmtfailed");
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt, "sssss", $carBrand, $carPrice, $carDoors, $carSeats,$carFueltype);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header("location: ../NewCar.php?error=none");
+    exit();
+}
